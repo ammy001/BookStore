@@ -48,6 +48,8 @@ namespace BookStore.API
                 });
             });
 
+            services.AddCors();
+
             services.ResolveDependencies();
         }
 
@@ -71,6 +73,9 @@ namespace BookStore.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x =>
+            x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
