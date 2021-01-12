@@ -32,7 +32,7 @@ namespace BookStore.API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GteById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
             var book = await _bookService.GetById(id);
 
